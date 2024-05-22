@@ -1,10 +1,10 @@
 const arr = [1, 2, 3, 4, 5];
 (function(array, k) {
     const n = array.length;
-    k %= n; // Normalize k in case it's larger than the array length
+    k %= n; 
     for (let i = 0; i < k; i++) {
-        const temp = array.pop(); // Remove the last element
-        array.unshift(temp); // Add the last element to the beginning
+        const temp = array.pop(); 
+        array.unshift(temp); 
     }
 })(arr, 2);
 
