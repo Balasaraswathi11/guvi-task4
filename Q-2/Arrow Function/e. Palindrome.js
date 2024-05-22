@@ -1,5 +1,4 @@
-
-const Palindrome = ((N) => {
+const isPalindrome = (N) => {
     let str = "" + N;
     let len = str.length;
     for (let i = 0; i < parseInt(len / 2, 10); i++) {
@@ -7,10 +6,12 @@ const Palindrome = ((N) => {
             return false;
         }
     }
-    return true;
-});
+    return str; // Return the palindrome string
+};
 
-console.log(Palindrome('dad'));//true
-console.log(Palindrome(1221)) // Output: true
-console.log(Palindrome(1234)) //false
+const numbers = [12321, 12345, 1221, 45654];
+
+const palindromes = numbers.filter((number) => isPalindrome(number));
+
+console.log(palindromes);
 
