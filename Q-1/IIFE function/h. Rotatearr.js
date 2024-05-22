@@ -8,5 +8,5 @@ const arr = [1, 2, 3, 4, 5];
     }
 })(arr, 2);
 
-console.log(arr); // Output: [4, 5, 1, 2, 3]
+console.log(arr);
 
