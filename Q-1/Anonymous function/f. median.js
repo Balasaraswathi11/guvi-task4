@@ -1,29 +1,31 @@
-const findMedian = function(nums1, nums2) {
-    let s1 = nums1.length;
-    let s2 = nums2.length;
-    let index = s1 + s2;
-    if (s1 == 0) {
-        if (s2 % 2 == 1) {
-            return nums2[Math.floor(index / 2)];
-        } else {
-            return (nums2[Math.floor(index / 2) - 1] + nums2[Math.floor(index / 2)]) / 2;
-        }
+var mergearray=function(array1,array2)
+{let result=[]
+let i=0
+let j=0
+while(i<array1.length&&j<array2.length){
+    if(array1[i]<array2[j]){
+        result.push(array1[i])
+        i++
     }
-    for (let i = 0; i < index / 2 + 1; i++) {
-        nums1.push(nums2[i]);
+    else{result.push(array2[j])
+        j++
+    }}
+    while(i<array1.length){result.push(array1[i])
+        i++
     }
-    nums1.sort((a, b) => a - b);
-    if (index % 2 == 1) {
-        return nums1[Math.floor(index / 2)];
-    } else {
-        return (nums1[Math.floor(index / 2) - 1] + nums1[Math.floor(index / 2)]) / 2;
+    while(j<array2.length){result.push(array2[j])
+        j++
     }
 
-};
+return result
 
+}
 
-const nums1 = [1, 3];
-const nums2 = [2];
-console.log("Median is:", findMedian(nums1, nums2));
-
-
+let findmedian=function(arr1,arr2){
+    const merge=mergearray(arr1,arr2)
+    let n=merge.length
+    if(n%2==1){return merge[Math.floor(n/2)]}
+    else{return (merge[n/2-1]+merge[n/2])/2}
+}
+console.log("The Median is: "+findmedian([1,3],[2]))
+console.log("The Median is: "+ findmedian([1,5,9,10,54,63],[3,6,9,14,47,78]))
